@@ -23,7 +23,6 @@ pipeline {
             steps{
                 sh 'docker login -u $DOCKER_HUB_CREDENTIALS_USR -p $DOCKER_HUB_CREDENTIALS_PSW'
                 sh 'docker tag todo-application-image:latest pankhudi17/todo-application-image:latest'
-                #sh 'docker push pankhudi17/todo-application-image:latest'
             }
         }
         stage('Verify services'){
