@@ -6,7 +6,7 @@ pipeline {
     stages{
         stage('Clone Repository'){
             steps{
-                git branch: 'master', url: 'https://github.com/ssidral/todo-application.git'
+                git branch: 'master', url: 'https://github.com/PankhudiJain17/todo-application.git'
             }
         }
         stage('builds with maven'){
@@ -22,8 +22,8 @@ pipeline {
         stage('push image to docker hub'){
             steps{
                 sh 'docker login -u <username> -p <password>'
-                sh 'docker tag todo-application-image:latest shrinivassidral/todo-application-image:latest'
-                sh 'docker push shrinivassidral/todo-application-image:latest'
+                sh 'docker tag todo-application-image:latest pankhudi17/todo-application-image:latest'
+                sh 'docker push pankhudi17/todo-application-image:latest'
             }
         }
         stage('Verify services'){
